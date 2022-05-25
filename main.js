@@ -132,10 +132,10 @@ prompt.get(['reply'], function (err, result) {
         }) 
     }
     else if (result.reply === 'y' && vcard == 21){
-        console.log(`Congratulations! Blackjack! ${card1} ${card2} = ${vcard}`)
+        console.log(`Congratulations! Blackjack!\n${card1} ${card2} = ${vcard}\nDealer's cards \n${bcard1} ${bcard2} = ${bvcard}`)
     }
     else if (result.reply === 'y' && vcard == 21 && bvcard == 21){
-        console.log(`Congratulations! Blackjack! ${card1} ${card2} = ${vcard}`)
+        console.log(`You and the Dealer both got Blackjack!\n${card1} ${card2} = ${vcard}\nDealer's cards \n${bcard1} ${bcard2} = ${bvcard}`)
     }
     else{
     console.log('Goodbye!')
