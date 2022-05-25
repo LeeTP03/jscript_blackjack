@@ -66,12 +66,12 @@ prompt.get(['reply'], function (err, result) {
                                 console.log(`You Lost! You busted and lost to the Dealer at \n${card1} ${card2} ${card3} ${card4} ${card5} = ${vcard3}\nDealer's cards \n${bcard1} ${bcard2} ${bcard3} ${bcard4} ${bcard5} = ${bvcard3}`)
                             }
                             else if (result.reply === 'y' && vcard3 > 21 && bvcard3 > 21){
-                                console.log(`You both busted at \n${card1} ${card2} ${card3} ${card4} ${card5} = ${vcard3}\nDealer's cards \n${bcard1} ${bcard2} ${bcard3} ${bcard4} ${bcard5} = ${bvcard3}`)
+                                console.log(`You and the Dealer both busted at \n${card1} ${card2} ${card3} ${card4} ${card5} = ${vcard3}\nDealer's cards \n${bcard1} ${bcard2} ${bcard3} ${bcard4} ${bcard5} = ${bvcard3}`)
                             }
                             else if (result.reply === 'y' && vcard3 < 21 && bvcard3 > 21){
                                 console.log(`You Win! The Dealer busted at \n${card1} ${card2} ${card3} ${card4} ${card5} = ${vcard3}\nDealer's cards \n${bcard1} ${bcard2} ${bcard3} ${bcard4} ${bcard5} = ${bvcard3}`)
                             }
-                            else if (result.reply === 'n' && vcard2 < bvcard2){
+                            else if (result.reply === 'n' && vcard2 < bvcard2 && bvcard2 <21 ){
                                 console.log(`You lost to the Dealer \n${card1} ${card2} ${card3} ${card4} = ${vcard2}\nDealer's cards \n${bcard1} ${bcard2} ${bcard3} ${bcard4} = ${bvcard2}`)
                             }
                             else if (result.reply === 'n' && vcard2 > bvcard2){
@@ -89,12 +89,12 @@ prompt.get(['reply'], function (err, result) {
                         console.log(`You Lost! You busted and lost to the Dealer at \n${card1} ${card2} ${card3} ${card4} = ${vcard2}\nDealer's cards \n${bcard1} ${bcard2} ${bcard3} ${bcard4} = ${bvcard2}`)
                     }
                     else if (result.reply === 'y' && vcard2 > 21 && bvcard2 > 21){
-                        console.log(`You both busted at \n${card1} ${card2} ${card3} ${card4} = ${vcard2}\nDealer's cards \n${bcard1} ${bcard2} ${bcard3} ${bcard4} = ${bvcard2}`)
+                        console.log(`You and the Dealer both busted at \n${card1} ${card2} ${card3} ${card4} = ${vcard2}\nDealer's cards \n${bcard1} ${bcard2} ${bcard3} ${bcard4} = ${bvcard2}`)
                     }
                     else if (result.reply === 'y' && vcard2 < 21 && bvcard2 > 21){
                         console.log(`You Win! The Dealer busted at \n${card1} ${card2} ${card3} ${card4} = ${vcard2}\nDealer's cards \n${bcard1} ${bcard2} ${bcard3} ${bcard4} = ${bvcard2}`)
                     }
-                    else if (result.reply === 'n' && vcard1 < bvcard1){
+                    else if (result.reply === 'n' && vcard1 < bvcard1 && bvcard1 < 21){
                         console.log(`You lost to the Dealer \n${card1} ${card2} ${card3} = ${vcard1}\nDealer's cards \n${bcard1} ${bcard2} ${bcard3} = ${bvcard1}`)
                     }
                     else if (result.reply === 'n' && vcard1 > bvcard1){
@@ -112,12 +112,12 @@ prompt.get(['reply'], function (err, result) {
                 console.log(`You Lost! You busted and lost to the Dealer at \n${card1} ${card2} ${card3} = ${vcard1}\nDealer's cards \n${bcard1} ${bcard2} ${bcard3} = ${bvcard1}`)
             }
             else if (result.reply === 'y' && vcard1 > 21 && bvcard1 > 21){
-                console.log(`You both busted at \n${card1} ${card2} ${card3} = ${vcard1}\nDealer's cards \n${bcard1} ${bcard2} ${bcard3} = ${bvcard1}`)
+                console.log(`You and the Dealer both busted at \n${card1} ${card2} ${card3} = ${vcard1}\nDealer's cards \n${bcard1} ${bcard2} ${bcard3} = ${bvcard1}`)
             }
             else if (result.reply === 'y' && vcard1 < 21 && bvcard1 > 21){
                 console.log(`You Win! The Dealer busted at \n${card1} ${card2} ${card3} = ${vcard1}\nDealer's cards \n${bcard1} ${bcard2} ${bcard3} = ${bvcard1}`)
             }
-            else if (result.reply === 'n' && vcard < bvcard){
+            else if (result.reply === 'n' && vcard < bvcard && bvcard < 21){
                 console.log(`You lost to the Dealer \n${card1} ${card2} = ${vcard}\nDealer's cards \n${bcard1} ${bcard2} = ${bvcard}`)
             }
             else if (result.reply === 'n' && vcard > bvcard){
@@ -132,6 +132,9 @@ prompt.get(['reply'], function (err, result) {
         }) 
     }
     else if (result.reply === 'y' && vcard == 21){
+        console.log(`Congratulations! Blackjack! ${card1} ${card2} = ${vcard}`)
+    }
+    else if (result.reply === 'y' && vcard == 21 && bvcard == 21){
         console.log(`Congratulations! Blackjack! ${card1} ${card2} = ${vcard}`)
     }
     else{
